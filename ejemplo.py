@@ -18,10 +18,11 @@ def validar():
         password = request.form['password']
 
         resultado=verificar(usuario,password)
+        return render_template('menu.html',title='Sistema DABM')
 
-def verificar():
+def verificar(usuario,password):
     #usuario no existe, constraseña correcta, bienvenido
-    pass
+    return True
 
 if __name__ == "__main__":
     app.run(debug=True)
