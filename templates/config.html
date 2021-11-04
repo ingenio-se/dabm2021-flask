@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitor de temperatura</title>
+    <title>Configuación de parámetros</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -13,14 +13,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        setTimeout(function(){
-            window.location.reload(1)
-        },1000)
-    </script>
+    
 </head>
 <body>
-    <p><h4>MONITOR DE TEMPERATURA</h4></p>
+    <p><h4>PARÁMETROS DE CONFIGURACIÓN</h4></p>
     <br>
     <p>
     <table class="table">
@@ -33,35 +29,25 @@
         </thead>
         <tbody>
           <tr class="table-primary">
-            <td>{{ datos[0][0]}}</td>
-            <td>{{ datos[0][1]}}</td>
-            <td>{{ datos[0][2]}}</td>
+            <td>Hipotermia</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
           </tr>
           <tr class="table-success">
-            <td>{{ datos[1][0]}}</td>
-            <td>{{ datos[1][1]}}</td>
-            <td>{{ datos[1][2]}}</td>
+            <td>Normal</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
           </tr>
           <tr class="table-danger">
-            <td>{{ datos[2][0]}}</td>
-            <td>{{ datos[2][1]}}</td>
-            <td>{{ datos[2][2]}}</td>
+            <td>Fiebre</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
           </tr>
           
         </tbody>
       </table>
     </p>
-    <p>Temperatura : {{ lectura }}</p>
-    <p> {% if color == 1 %}
-        <div style="width:500px;height:500px;background-color: lightblue"></div>
-        {% endif %}
-        {% if color == 2 %}
-        <div style="width:500px;height:500px;background-color: lightgreen"></div>
-        {% endif %}
-        {% if color == 3 %}
-        <div style="width:500px;height:500px;background-color: red"></div>
-        {% endif %}
-    </p>
-
+    <p><button class="btn btn-primary" type="button">GUARDAR</button></p>
+    
 </body>
 </html>

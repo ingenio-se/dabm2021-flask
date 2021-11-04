@@ -30,8 +30,19 @@ def monitor():
     lectura = random.randint(0,45)
     #enviar a la interfaz
 
-    return render_template("monitor.html",datos = datos, lectura=lectura)
+    color=0
+    if lectura >= int(datos[0][1]) and lectura <= int(datos[0][2]):
+        color=1
+    if lectura >= int(datos[1][1]) and lectura <= int(datos[1][2]):
+        color=2
+    if lectura >= int(datos[2][1]) and lectura <= int(datos[2][2]):
+        color=3
 
+    return render_template("monitor.html",datos = datos, lectura=lectura, color=color)
+
+@app.route("/config")
+def config():
+    return render_template("config.html")
 
 def getDatos():
     directorio = os.path.dirname(__file__)
